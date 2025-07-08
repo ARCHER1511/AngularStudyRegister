@@ -1,0 +1,55 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+    <h4 class="mb-4 text-center">Login</h4>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="emailInput" class="form-label">Email address</label>
+        <input
+          type="email"
+          id="emailInput"
+          class="form-control"
+          placeholder="name@example.com"
+          formControlName="email"
+        />
+      </div>
+
+      <!-- Password -->
+      <div class="mb-3">
+        <label for="passwordInput" class="form-label">Password</label>
+        <input
+          type="password"
+          id="passwordInput"
+          class="form-control"
+          placeholder="••••••••"
+          formControlName="password"
+        />
+      </div>
+
+      <!-- Remember Me -->
+      <div class="form-check mb-3">
+        <input
+          type="checkbox"
+          id="rememberMeCheck"
+          class="form-check-input"
+          formControlName="rememberMe"
+        />
+        <label class="form-check-label" for="rememberMeCheck">
+          Remember me
+        </label>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary w-100">
+        Login
+      </button>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </div>
+</div>
+

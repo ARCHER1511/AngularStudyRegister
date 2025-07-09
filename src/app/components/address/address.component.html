@@ -1,0 +1,72 @@
+<div class="container mt-4">
+  <h3 class="mb-3">Addresses</h3>
+
+  <form [formGroup]="form">
+    <div formArrayName="address" class="row">
+      <div
+        class="col-md-6 mb-3"
+        *ngFor="let addr of address.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <div class="card shadow-sm p-3">
+          <div class="card-body">
+            <h5 class="card-title">Address {{ i + 1 }}</h5>
+
+            <div class="mb-2">
+              <label for="street{{ i }}">Street</label>
+              <input
+                id="street{{ i }}"
+                type="text"
+                class="form-control"
+                formControlName="street"
+              />
+            </div>
+
+            <div class="mb-2">
+              <label for="number{{ i }}">Number</label>
+              <input
+                id="number{{ i }}"
+                type="text"
+                class="form-control"
+                formControlName="number"
+              />
+            </div>
+
+            <div class="mb-2">
+              <label for="mark{{ i }}">Mark</label>
+              <input
+                id="mark{{ i }}"
+                type="text"
+                class="form-control"
+                formControlName="mark"
+              />
+            </div>
+
+            <button
+              class="btn btn-danger mt-2"
+              type="button"
+              (click)="removeAddress(i)"
+              *ngIf="address.length > 1"
+            >
+              🗑 Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="btn btn-primary"
+      type="button"
+      (click)="addAddress()"
+      [disabled]="isFull()"
+    >
+      ➕ Add Address
+    </button>
+
+    <div class="text-danger mt-2" *ngIf="isFull()">
+      ⚠️ You’ve reached the maximum of {{ maxCards }} addresses.
+    </div>
+  </form>
+</div>
+

@@ -1,0 +1,60 @@
+@defer (on viewport) {
+<div class="not-found">
+    <img src="https://http.cat/404" alt="404 Not Found" />
+    <h1>Oops! Page Not Found</h1>
+    <p>The page you’re looking for doesn't exist or has been moved.</p>
+    <div>
+        <a routerLink="/home" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>
+
+<style>
+    .not-found {
+        background-color: #f4f4f4;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+    }
+
+    img {
+        max-width: 400px;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 3rem;
+        color: #333;
+        margin: 1rem 0 0.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: #777;
+    }
+
+</style>
+
+}
+@placeholder {
+<div id="splash-screen" class="d-flex justify-content-center align-items-center vh-100 bg-dark text-white flex-column">
+    <div class="spinner-border text-light mb-3" role="status" style="width: 3rem; height: 3rem;">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <h4>Loading App...</h4>
+</div>
+}
+<style>
+    #splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+    }
+</style>

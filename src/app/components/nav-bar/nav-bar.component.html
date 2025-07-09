@@ -7,14 +7,8 @@
     </a>
 
     <!-- Mobile toggle -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#mainNavbar"
-      aria-controls="mainNavbar"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -24,6 +18,21 @@
         <!-- Products (only if logged in) -->
         <li class="nav-item" *ngIf="isBrowser && isLoggedIn">
           <a class="nav-link" routerLink="products">Products</a>
+        </li>
+        <li class="nav-item" *ngIf="isBrowser && isLoggedIn">
+          <a class="nav-link" routerLinkActive="active" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="isBrowser && isLoggedIn">
+          <a class="nav-link" routerLinkActive="active" routerLink="products">Products</a>
+        </li>
+        <li class="nav-item" *ngIf="isBrowser && isLoggedIn">
+          <a class="nav-link" routerLinkActive="active" routerLink="categories">Categories</a>
+        </li>
+        <li class="nav-item" *ngIf="isBrowser && isLoggedIn">
+          <a class="nav-link" routerLinkActive="active" routerLink="jewelery">Jewelery</a>
+        </li>
+        <li class="nav-item" *ngIf="isBrowser && isLoggedIn">
+          <a class="nav-link" routerLinkActive="active" routerLink="address">address</a>
         </li>
 
         <!-- Login -->

@@ -1,0 +1,9 @@
+<div class="slider-container d-flex overflow-hidden position-relative">
+  <div class="slider-track d-flex transition-all" [style.transform]="getTransform()">
+    <div class="slide" *ngFor="let image of images">
+      <img [src]="image" class="img-fluid" alt="Slide image" />
+    </div>
+  </div>
+  <button class="btn btn-primary position-absolute start-0" (click)="prev()">‹</button>
+  <button class="btn btn-primary position-absolute end-0" (click)="next()">›</button>
+</div>

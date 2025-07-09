@@ -14,7 +14,24 @@
       <div class="col-md-4 mb-3">
         <h5>Quick Links</h5>
         <ul class="list-unstyled">
-          
+           <li class="nav-item" *ngIf="isBrowser && isLoggedIn">
+          <a class="nav-link" routerLink="products">Products</a>
+        </li>
+        <li class="nav-item" *ngIf="isBrowser && isLoggedIn">
+          <a class="nav-link" routerLinkActive="active" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="isBrowser && isLoggedIn">
+          <a class="nav-link" routerLinkActive="active" routerLink="products">Products</a>
+        </li>
+        <li class="nav-item" *ngIf="isBrowser && isLoggedIn">
+          <a class="nav-link" routerLinkActive="active" routerLink="categories">Categories</a>
+        </li>
+        <li class="nav-item" *ngIf="isBrowser && isLoggedIn">
+          <a class="nav-link" routerLinkActive="active" routerLink="jewelery">Jewelery</a>
+        </li>
+        <li class="nav-item" *ngIf="isBrowser && isLoggedIn">
+          <a class="nav-link" routerLinkActive="active" routerLink="address">address</a>
+        </li>
         </ul>
       </div>
 

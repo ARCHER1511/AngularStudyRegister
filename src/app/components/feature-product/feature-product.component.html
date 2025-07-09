@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    @for (product of products; track product.id) {
+    @for (product of products.slice(0,3); track product.id) {
       <div class="col">
         <div class="card h-100 shadow-sm">
           <a routerLink="/product/{{ product.id }}" class="text-decoration-none">
@@ -12,8 +12,7 @@
             <p class="card-text">{{ product.description }}</p>
             <div class="mt-auto">
               <p class="fw-bold text-success mb-2">${{ product.price }}</p>
-              <span class="badge bg-warning text-dark">★ {{ product.rating.rate }} ({{ product.rating.count }})</span>
-              <a class="btn btn-outline-primary w-100" [routerLink]="['/product', product.id]" >Details</a>
+              <a class="btn btn-outline-primary w-100" [routerLink]="['/product', product.id]">Details</a>
             </div>
           </div>
         </div>

@@ -1,0 +1,47 @@
+@defer (on viewport) {
+  <app-jewelry></app-jewelry>
+}
+@placeholder {
+  <div id="splash-screen" class="d-flex justify-content-center align-items-center vh-100 bg-dark text-white flex-column">
+  <div class="spinner-border text-light mb-3" role="status" style="width: 3rem; height: 3rem;">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <h4>Loading App...</h4>
+</div>
+}
+<style>
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+</style>
+<app-slider></app-slider>
+<h2 class="text-center mt-4">Products</h2>
+@defer (on viewport) {
+  <app-products/>
+}
+@placeholder {
+  <div id="splash-screen" class="d-flex justify-content-center align-items-center vh-100 bg-dark text-white flex-column">
+  <div class="spinner-border text-light mb-3" role="status" style="width: 3rem; height: 3rem;">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <h4>Loading App...</h4>
+</div>
+}
+<style>
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+</style>
+

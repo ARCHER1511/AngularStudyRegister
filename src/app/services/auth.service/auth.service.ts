@@ -17,7 +17,7 @@ export class AuthService {
   isLoggedIn$ = this._isLoggedIn$.asObservable();
 
   private hasToken(): boolean {
-    if (this.isBrowser) {
+    if (this.isBrowser && typeof sessionStorage != 'undefined') {
       return !!(sessionStorage.getItem('token') || localStorage.getItem('token'));
     }
     return false;

@@ -46,6 +46,7 @@ export class LoginComponent {
 
         // ✅ Flexible access: supports both structures
         const token = res?.token || res?.data?.token;
+       
 
         if (!token) {
           this.errorMessage = 'Login failed: no token received.';

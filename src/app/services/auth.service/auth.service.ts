@@ -1,8 +1,10 @@
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { LoginRequest } from '../../interfaces/LoginRequest';
+import { RegisterRequest } from '../../interfaces/RegisterRequest';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -22,13 +24,29 @@ export class AuthService {
     }
     return false;
   }
-
-  login(data: any) {
-    return this._httpClient.post(`${this.Url}/login`, data);
+  // Helper method to convert an object to HttpParams
+  private createHttpParams(data: any): HttpParams {
+    let params = new HttpParams();
+    for (const key in data) {
+      if (data.hasOwnProperty(key)) {
+        params = params.set(key, data[key]);
+      }
+    }
+    return params;
   }
 
-  register(data: any) {
-    return this._httpClient.post(`${this.Url}/register`, data);
+  login(data: LoginRequest) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = this.createHttpParams(data); // Convert data to HttpParams
+
+    return this._httpClient.post(`${this.Url}/login`, body.toString(), { headers });
+  }
+
+  register(data: RegisterRequest) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = this.createHttpParams(data); // Convert data to HttpParams
+
+    return this._httpClient.post(`${this.Url}/register`, body.toString(), { headers });
   }
 
   logout(): void {

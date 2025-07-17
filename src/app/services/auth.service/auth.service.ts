@@ -39,14 +39,14 @@ export class AuthService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = this.createHttpParams(data); // Convert data to HttpParams
 
-    return this._httpClient.post(`${this.Url}/login`, body.toString(), { headers });
+    return this._httpClient.post(`${this.Url}/login`, data);
   }
 
   register(data: RegisterRequest) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const body = this.createHttpParams(data); // Convert data to HttpParams
 
-    return this._httpClient.post(`${this.Url}/register`, body.toString(), { headers });
+    return this._httpClient.post(`${this.Url}/register`,data);
   }
 
   logout(): void {

@@ -8,7 +8,7 @@ import { RegisterRequest } from '../../interfaces/RegisterRequest';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private Url = 'https://localhost:7230/api/Authentication';
+  private Url = 'https://192.168.1.6:7230/api/Authentication';
 
   private _httpClient = inject(HttpClient);
   private _router = inject(Router);
